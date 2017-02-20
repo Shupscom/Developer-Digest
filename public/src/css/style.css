@@ -6,8 +6,59 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 --*/
 /**Added Styles**/
 .social-media{
-	margin-top: 5px;
-	border-bottom: 1px solid #e6e6e6;
+	margin: 5px;
+
+}
+/* css for social media*/
+.social-google {
+	background-color: #da573b;
+	border-color: #be5238;
+	color: #fff;
+}
+.social-google:hover{
+	background-color: #be5238;
+	border-color: #9b4631;
+}
+
+.social-twitter {
+	background-color: #1daee3;
+	border-color: #3997ba;
+}
+.social-twitter:hover {
+	background-color: #3997ba;
+	border-color: #347b95;
+}
+
+.social-facebook {
+	background-color: #4c699e;
+	border-color: #47618d;
+}
+.social-facebook:hover {
+	background-color: #47618d;
+	border-color: #3c5173;
+}
+
+.social-linkedin {
+	background-color: #4875B4;
+	border-color: #466b99;
+}
+.social-linkedin:hover {
+	background-color: #466b99;
+	border-color: #3b5a7c;
+}
+.social-whatsapp{
+	background-color: #4dc247;
+	border-color: #4dc247;
+}
+.social-whatsapp:hover{
+	background-color: #4dc247;
+	border-color: #4dc247;
+}
+.social-login-btn {
+	margin: 5px;
+	/*width: 20%;*/
+	/*font-size: 250%;*/
+	padding: 0;
 }
 
 /** Added Styles **/
@@ -167,7 +218,7 @@ label{
 }
 .content-left {
 	padding:0;
-	border: 1px solid #e6e6e6;
+	border-right: 1px solid #e6e6e6;
 }
 .article img {
 	width:95%;
@@ -227,7 +278,9 @@ a.title {
 }
 .content-right {
 	padding:0;
+	/*border-left:1px solid #e6e6e6;*/
 	border-right:1px solid #e6e6e6;
+	/*border-top:1px solid #e6e6e6;*/
 }
 .editor { 
 	border-bottom:1px solid #e6e6e6;

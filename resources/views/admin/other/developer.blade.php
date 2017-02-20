@@ -12,7 +12,9 @@
                 <div class="panel-heading "><h2 class="text-center">Developer of the Week</h2>
                 </div>
                 <div class="panel-body">
-                    <form action="#" method="">
+                    <form action="{{route('developer_save')}}" method="post" enctype="
+                    m">
+
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" name="name" class="form-control" id="name">
@@ -24,7 +26,7 @@
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" name="profession" class="form-control" id="email">
+                            <input type="email" name="email" class="form-control" id="email">
                         </div>
                         <div class="form-group">
                             <label for="advice">Advice for Other Developer</label>
@@ -33,7 +35,7 @@
                         </div>
                         <div class="form-group">
                             <label for="picture"></label>
-                            <input type="file" name="picture" class="form-control" id="picture">
+                            <input type="file" name="file" class="form-control" id="picture">
 
                         </div>
                         <div class="form-group">
@@ -51,31 +53,15 @@
         <div class="col-md-5 col-md-push-1">
             <div class="panel panel-info">
                 <div class="panel-body ">
+                    @foreach($developers as $developer)
                     <div class="well clearfix">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias asperiores dolore dolorem, dolorum, eius eveniet fuga harum laborum minima minus necessitatibus neque nesciunt nobis perspiciatis quia ratione similique sint vel.
-                        <a href="#">Created at</a>
-                        <div class="pull-right"> <button type="submit" class="btn btn-primary"><i class="fa fa-thumbs-o-up fa-2x"></i> </button>
+                       {{$developer->name}}
+                        <a href="#">{{$developer->created_at}}</a>
+                        <div class="pull-right"> <button type="submit" class="btn btn-primary"><i class="fa fa-edit fa-2x"></i> </button>
                             <button type="submit" class="btn btn-danger"><i class="fa fa-trash fa-2x"></i></button>
                         </div>
                     </div>
-
-                    <div class="well clearfix">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias asperiores dolore dolorem, dolorum, eius eveniet fuga harum laborum minima minus necessitatibus neque nesciunt nobis perspiciatis quia ratione similique sint vel.
-                        <a href="#">Created at</a>
-                        <div class="pull-right"> <button type="submit" class="btn btn-primary"><i class="fa fa-thumbs-o-up fa-2x"></i> </button>
-                            <button type="submit" class="btn btn-danger"><i class="fa fa-trash fa-2x"></i></button>
-                        </div>
-                    </div>
-
-                    <div class="well clearfix">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias asperiores dolore dolorem, dolorum, eius eveniet fuga harum laborum minima minus necessitatibus neque nesciunt nobis perspiciatis quia ratione similique sint vel.
-                        <a href="#">Created at</a>
-                        <div class="pull-right"> <button type="submit" class="btn btn-primary"><i class="fa fa-thumbs-o-up fa-2x"></i> </button>
-                            <button type="submit" class="btn btn-danger"><i class="fa fa-trash fa-2x"></i></button>
-                        </div>
-                    </div>
-
-
+                    @endforeach
                 </div>
             </div>
         </div>

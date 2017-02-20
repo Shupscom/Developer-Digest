@@ -12,7 +12,7 @@
                <div class="panel-heading "><h2 class="text-center">Quote of the Day</h2>
                </div>
                <div class="panel-body">
-                   <form action="#" method="">
+                   <form action="{{route('quote_save')}}" method="post">
 
                        <div class="form-group">
                            <label for="quote">Write a Quote</label>

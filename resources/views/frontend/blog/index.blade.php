@@ -24,12 +24,13 @@
     {{--<div> <img src="{{URL::to('src/images/DD.png')}}" height="250"/> </div>--}}
     {{--</div>--}}
         {{--</div>--}}
-    <div class="social-media clearfix">
-        <a class="btn pull-right" href="#"><i class="fa fa-linkedin-square fa-3x"></i></a>
-        <a class="btn pull-right" href="#"><i class="fa fa-google-plus-square fa-3x"></i></a>
-        <a class="btn pull-right" href="#"><i class="fa fa-whatsapp fa-3x"></i></a>
-        <a class="btn pull-right" href="#"><i class="fa fa-twitter-square fa-3x"></i></a>
-        <a class="btn pull-right" href="#"><i class="fa fa-facebook-square fa-3x"></i></a>
+    <div class="social-media pull-right clearfix">
+        <a class="btn btn-primary social-facebook" href="#"><i class="fa fa-facebook fa-2x"></i></a>
+        <a class="btn btn-primary social-twitter" href="#"><i class="fa fa-twitter fa-2x"></i></a>
+        <a class="btn btn-primary social-google" href="#"><i class="fa fa-instagram fa-2x"></i></a>
+        <a class="btn btn-primary  social-linkedin" href="#"><i class="fa fa-linkedin fa-2x"></i></a>
+        <a class="btn btn-primary  social-google" href="#"><i class="fa fa-google-plus fa-2x"></i></a>
+
     </div>
         </div>
     <div class="container">
@@ -39,14 +40,14 @@
                     <h5 class="head">in recent posts</h5>
                     <h6>Software </h6>
                     <a class="title" href="{{route('single')}}">DeltaMaker – The new kid on the block An Elegant 3D Printer and a new wicked ass thing</a>
-                    <a href="single.html"><img src="{{URL::to('src/images/a1.jpg')}}" alt="" /></a>
+                    <a href="{{route('single')}}"><img src="{{URL::to('src/images/a1.jpg')}}" alt="" /></a>
                     <p>Products were inspired by Behance's research of especially productive teams in the creative industry. Hundreds of individuals and teams were interviewed, and Behance chronicled the work habits and best practices of creative leaders. </p>
                     <p>The paper products were initially designed by and for the Behance team as a way to stay organized. In 2007, at the insistence of friends who wanted Action Pads of their own...</p>
                 </div>
                 <div class="article">
                     <h6>Printers</h6>
                     <a class="title" href="{{route('single')}}">Nokia offering customers printable STL phone cases for the Lumia 820 and things </a>
-                    <a href="single.html"><img src="{{URL::to('src/images/a2.jpg')}}" alt="" /></a>
+                    <a href="{{route('single')}}"><img src="{{URL::to('src/images/a2.jpg')}}" alt="" /></a>
                     <p>This week Nokia announced it is giving away files for printable case for it’s new Lumia 820 range. This week Nokia a files for printable case for it’s new Lumia 820 range. This week Nokia announced it is giving away files for printable case for it’s new Lumia 820 range. This week Nokia announced it is giving away files for printable case for it’s new Lumia 820 range. </p>
                 </div>
 
@@ -58,7 +59,6 @@
                         <a href="#" class="learn">Learn More</a>
                     </p>
                 </div>
-
                 <div class="article">
                     <h5 class="head">Mostly Viewed</h5>
                     <h6>Printers</h6>
@@ -72,23 +72,21 @@
             {{--</div>--}}
             <div class="col-md-5 content-right">
                 <div class="content-right-top">
-                    <h5 class="head">DAILY QUOTE </h5>
-                    <a href="#">
+                    <h5  class="head">Daily Quote</h5>
                         <div class="editor text-center">
                             <h3>DeltaMaker – The new kid on the block An Elegant 3D Printer</h3>
                             <p>A new cheap ass 3D Printer worth checking out</p>
                             {{--<label>2 Days Ago</label>--}}
                             {{--<span></span>--}}
                         </div>
-                    </a>
                 </div>
                 <div class="editors-pic-grids">
-                    <h5 style="background-color: #262C39">Developer of the Week</h5>
+                    <h5>Developer of the Week</h5>
                     <div class="editors-pic">
                         <div class="e-pic">
                             <a href="{{route('single')}}"><img src="{{URL::to('src/images/ep1.jpg')}}" alt="" /></a>
                         </div>
-                        <div class="e-pic-info">
+                        <div class="e-pic-info text-center">
                             <h3><span style="color:#1ac7c3">Name:</span> Olasupo Kazeem Abolaji</h3>
                             <h3><span style="color:#1ac7c3">Profession:</span> Software Developer</h3>
                             <h3><span style="color:#1ac7c3">Advice to Developer:</span>Build a strong foundation </h3>
@@ -103,30 +101,28 @@
                         <div class="editor text-center">
                             <h3>DeltaMaker – The new kid on the block An Elegant 3D Printer</h3>
                             <p>A new cheap ass 3D Printer worth checking out</p>
+                            <label>2 Days Ago</label>
                         </div>
                     </a>
                     <a href="#">
                         <div class="editor text-center">
                             <h3>DeltaMaker – The new kid on the block An Elegant 3D Printer</h3>
                             <p>A new cheap ass 3D Printer worth checking out</p>
-                            {{--<label>2 Days Ago</label>--}}
-                            {{--<span></span>--}}
+                            <label>2 Days Ago</label>
                         </div>
                     </a>
                     <a href="#">
                         <div class="editor text-center">
                             <h3>DeltaMaker – The new kid on the block An Elegant 3D Printer</h3>
                             <p>A new cheap ass 3D Printer worth checking out</p>
-                            {{--<label>2 Days Ago</label>--}}
-                            {{--<span></span>--}}
+                            <label>2 Days Ago</label>
                         </div>
                     </a>
                     <a href="#">
                         <div class="editor text-center">
                             <h3>DeltaMaker – The new kid on the block An Elegant 3D Printer</h3>
                             <p>A new cheap ass 3D Printer worth checking out</p>
-                            {{--<label>2 Days Ago</label>--}}
-                            {{--<span></span>--}}
+                            <label>2 Days Ago</label>
                         </div>
                     </a>
                 </div>

@@ -3,5 +3,5 @@
     Tutorials
 @endsection
 @section('content')
-    
+
 @endsection

@@ -36,7 +36,6 @@ $('#modal-save').on('click',function() {
         method: 'POST',
         url: urlEditCategory,
         data: {category:  $('#edit_category').val(), categoryId: categoryId, _token: token}
-
     }).done(function(msg){
         $(categoryName).text(msg['new_name']);
         console.log(categoryName);

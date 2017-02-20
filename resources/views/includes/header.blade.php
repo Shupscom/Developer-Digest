@@ -1,11 +1,12 @@
 <div class="header">
     <div class="container">
         <div class="logo">
+
             <a href="{{route('index')}}"><h1> Developer Digest</h1></a>
         </div>
         <div class="pages">
             <ul>
-                <li><a class="active" href="{{route('scholarsplatform')}}">Scholars</a></li>
+                <li><a href="{{route('scholarsplatform')}}" {{Request::is('Scholars') ? 'class=active':''}}>Scholars</a></li>
                 <li><a href="">Gadgets</a></li>
                 <li><a href="{{route('tutorials')}}">Tutorials</a></li>
             </ul>
@@ -30,7 +31,7 @@
         <div class="list-nav">
             <ul>
                 @foreach($categories as $category)
-                    <li><a href="#">{{$category->name}}</a></li>
+                    <li><a href="">{{$category->name}}</a></li>
                     @endforeach
                 {{--<li><a href="3dprinting.html">3D Printing</a></li>|--}}
                 {{--<li><a href="materials.html">Materials</a></li>|--}}

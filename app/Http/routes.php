@@ -27,7 +27,7 @@ Route::group(['middleware'=>['web']],function(){
 
     Route::get('/Scholars',function(){
         $category = \App\Category::all();
-        return view('frontend.other.scholars'.['categories'=> $category]);
+        return view('frontend.other.scholars',['categories'=> $category]);
     })->name('scholarsplatform');
 
     Route::get('/Tutorials',function(){
@@ -123,13 +123,28 @@ Route::group(['middleware'=>['web']],function(){
             'as' => 'news'
         ]);
 
-        Route::get('/Daily Quote', function () {
-            return view('admin.other.quote');
-        })->name('quote');
+        Route::get('/Daily Quote',[
+            'uses' => 'QuoteController@QuoteAdmin',
+            'as' => 'quote'
+        ]);
 
-        Route::get('/Developer of the Week', function () {
-            return view('admin.other.developer');
-        })->name('developer');
+        Route::post('//Daily Quote',[
+            'uses' => 'QuoteController@QuotePost',
+            'as' => 'quote_save'
+        ]);
+
+
+        Route::get('/Developer of the Week',[
+            'uses' => 'DeveloperController@DeveloperAdmin',
+            'as' => 'developer'
+        ]);
+
+        Route::post('/Developer of the Week',[
+            'uses' => 'DeveloperController@DeveloperPost',
+            'as' => 'developer_save'
+        ]);
+
+
 
 
 

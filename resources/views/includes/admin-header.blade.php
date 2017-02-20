@@ -34,7 +34,9 @@
                             <li><a href="{{route('developer')}}">Developer of the Week</a></li>
                         </ul>
                     </li>
+                    @if(Auth::user())
                     <li><a href="{{route('admin.logout')}}">Logout</a></li>
+                    @endif
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
