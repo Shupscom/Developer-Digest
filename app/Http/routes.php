@@ -20,6 +20,10 @@ Route::group(['middleware'=>['web']],function(){
             'as' => 'contact_me'
         ]);
 
+    Route::get('/Subscribe',function(){
+       return view('frontend.other.subscribe');
+    });
+
     Route::get('/Single',function(){
         $category = \App\Category::all();
         return view('frontend.blog.single',['categories' => $category]);
@@ -39,6 +43,17 @@ Route::group(['middleware'=>['web']],function(){
         $category = \App\Category::all();
         return view('frontend.blog.digital',['categories'=> $category]);
     })->name('digital');
+
+    Route::get('/Discussion',function(){
+        $category = \App\Category::all();
+        return view('frontend.other.discussion',['categories'=> $category]);
+    })->name('discussion');
+
+    Route::get('/Gadgets',function(){
+        $category = \App\Category::all();
+        return view('frontend.other.gadgets',['categories'=> $category]);
+    })->name('gadgets');
+
 
     // Login for Administartors Side
     Route::post('/admin/login',[
@@ -123,7 +138,7 @@ Route::group(['middleware'=>['web']],function(){
             'as' => 'news'
         ]);
 
-        Route::get('/Daily Quote',[
+        Route::get('/DailyQuote',[
             'uses' => 'QuoteController@QuoteAdmin',
             'as' => 'quote'
         ]);
@@ -133,22 +148,35 @@ Route::group(['middleware'=>['web']],function(){
             'as' => 'quote_save'
         ]);
 
-
-        Route::get('/Developer of the Week',[
+        Route::get('DailyQuoteDelete/{quote_id}',[
+           'uses' => 'QuoteController@QuoteDelete',
+            'as' => 'quote_delete'
+        ]);
+        Route::get('/DeveloperofWeek',[
             'uses' => 'DeveloperController@DeveloperAdmin',
             'as' => 'developer'
         ]);
 
-        Route::post('/Developer of the Week',[
+        Route::post('/DeveloperoftheWeek',[
             'uses' => 'DeveloperController@DeveloperPost',
             'as' => 'developer_save'
         ]);
-
-
-
-
-
-
+        Route::get('/DeveloperoftheWeekDelete/{$developer_id}',[
+            'uses' => 'DeveloperController@DeveloperDelete',
+            'as'=> 'developer_delete'
+        ]);
+        Route::get('/BookoftheMonth',[
+            'uses' => 'BookController@Bookadmin',
+            'as' => 'books'
+        ]);
+        Route::post('/BookoftheMonth',[
+            'uses' => 'BookController@postBook',
+            'as' => 'book_save'
+        ]);
+        Route::get('/BookoftheMonth/{book_id}',[
+           'uses' => 'BookController@bookDelete',
+            'as' => 'book_delete'
+        ]);
         Route::get('/Contact', function () {
             return view('admin.other.contact');
         })->name('contact');
@@ -198,6 +226,8 @@ Route::group(['middleware'=>['web']],function(){
             'uses' => 'AdminController@getLogout',
             'as' => 'admin.logout'
         ]);
+
+
 
 
     });

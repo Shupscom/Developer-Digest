@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 class QuoteController extends Controller{
 
        public function  QuoteAdmin(){
-           return view('admin.other.quote');
+           $quotes = Quote::all();
+           return view('admin.other.quote',['quotes' => $quotes]);
        }
 
       public function QuotePost(Request $request){
@@ -23,4 +24,10 @@ class QuoteController extends Controller{
           return redirect()->back();
 
       }
+
+      public  function QuoteDelete($quote_id){
+          $quote = Quote::find($quote_id);
+          $quote->delete();
+          return redirect()->back();
+    }
 }

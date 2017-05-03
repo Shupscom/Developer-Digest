@@ -11,30 +11,35 @@ class DeveloperController extends Controller{
             return view('admin.other.developer',['developers'=> $developers]);
         }
 
-    public function DeveloperPost(Request $request){
-        $rules= ['file' => 'required|max:' . config('app.maxFileSize') . '|mimes:' . config('app.allowedFiles')];
-        $this->validate($request,[
-            'name' => 'required',
-            'profession' => 'required',
-            'email' => 'required|email',
-            'advice' => 'required',
-            'about' => 'required'
-        ],$rules);
-        $developer = new Developer();
-        $developer->name = $request['name'];
-        $developer->profession = $request['name'];
-        $developer->email = $request['email'];
-        $developer->advice = $request['advice'];
-        $developer->about = $request['about'];
-        if($file = $request->hasfile('file')) {
-            $file = $request->file('file');
-            $developer->picture = time().$file->getClientOriginalName();
-            $file->move('img/uploads/admin/developer',$developer->picture);
-        }
-        $developer->save();
-        return redirect()->back();
+            public function DeveloperPost(Request $request){
+                $rules= ['file' => 'required|max:' . config('app.maxFileSize') . '|mimes:' . config('app.allowedFiles')];
+                $this->validate($request,[
+                    'name' => 'required',
+                    'profession' => 'required',
+                    'email' => 'required|email',
+                    'advice' => 'required',
+                    'about' => 'required'
+                ],$rules);
+                $developer = new Developer();
+                $developer->name = $request['name'];
+                $developer->profession = $request['name'];
+                $developer->email = $request['email'];
+                $developer->advice = $request['advice'];
+                $developer->about = $request['about'];
+                if($file = $request->hasfile('file')) {
+                    $file = $request->file('file');
+                    $developer->picture = time().$file->getClientOriginalName();
+                    $file->move('img/uploads/admin/developer',$developer->picture);
+                }
+                $developer->save();
+                return redirect()->back();
+            }
 
 
-
-    }
+          public function DeveloperDelete($developer_id){
+              $developer = Developer::find($developer_id);
+              dd($developer);
+              $developer->delete();
+              return redirect()->back();
+          }
 }

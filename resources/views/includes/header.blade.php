@@ -7,15 +7,15 @@
         <div class="pages">
             <ul>
                 <li><a href="{{route('scholarsplatform')}}" {{Request::is('Scholars') ? 'class=active':''}}>Scholars</a></li>
-                <li><a href="">Gadgets</a></li>
+                <li><a href="{{route('gadgets')}}">Gadgets</a></li>
                 <li><a href="{{route('tutorials')}}">Tutorials</a></li>
             </ul>
         </div>
         <div class="navigation">
             <ul>
-                <li><a href="#">Advertise</a></li>
+                <li><a href="{{route('discussion')}}" class="btn btn-primary" style="background: #282828; border-color:#1ac7c3">Create Discussion</a></li>
                 <li><a href="{{route('about')}}">About Us</a></li>
-                <li><a class="active" href="{{route('contact_me')}}">Contact Us</a></li>
+                <li><a href="{{route('contact_me')}}" {{Request::is('Contact') ? 'class=active':''}}>Contact Us</a></li>
             </ul>
         </div>
         <div class="clearfix"></div>
@@ -30,9 +30,9 @@
         <span class="menu"></span>
         <div class="list-nav">
             <ul>
-                @foreach($categories as $category)
-                    <li><a href="">{{$category->name}}</a></li>
-                    @endforeach
+                {{--@foreach($categories as $category)--}}
+                    {{--<li><a href="">{{$category->name}}</a></li>--}}
+                    {{--@endforeach--}}
                 {{--<li><a href="3dprinting.html">3D Printing</a></li>|--}}
                 {{--<li><a href="materials.html">Materials</a></li>|--}}
                 {{--<li><a href="printing.html">Printing</a></li>|--}}

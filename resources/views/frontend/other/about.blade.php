@@ -8,7 +8,7 @@
             <div class="about-content">
                 <!-- about -->
                 <h3>About Us</h3>
-                <img src="{{URL::to('src/images/abt_pic.jpg')}}" alt=" " />
+                <img src="{{URL::to('src/images/DD.png')}}" alt=" " />
                 <p>Having hands on experience in creating innovative designs, I do offer design
                     solutions which harness the new possibilities of web based communication,
                     internet presence and current technology trends.

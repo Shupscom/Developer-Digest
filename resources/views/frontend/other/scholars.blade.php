@@ -7,11 +7,14 @@
     <div class="container">
         <div class="content">
             <div class="contact-section">
-                <h3 class="c-head">contact-us</h3>
+                <h3 class="c-head">Scholars</h3>
                 <div class="singel_right">
                     <div class="lcontact span_1_of_contact">
                         <div class="contact-form">
-                            <form method="post" action="#">
+                            <form method="post" action="#" enctype="multipart/form-data">
+                                <p class="comment-form-author"><label for="author">Title</label>
+                                    <input type="text" class="textbox" value="Enter your name here..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter your name here...';}">
+                                </p>
                                 <p class="comment-form-author"><label for="author">Your Name:</label>
                                     <input type="text" class="textbox" value="Enter your name here..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter your name here...';}">
                                 </p>
@@ -55,4 +58,7 @@
             </div>
         </div>
     </div>
+@endsection
+@section('scripts')
+
 @endsection

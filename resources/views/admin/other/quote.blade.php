@@ -13,7 +13,6 @@
                </div>
                <div class="panel-body">
                    <form action="{{route('quote_save')}}" method="post">
-
                        <div class="form-group">
                            <label for="quote">Write a Quote</label>
                            <textarea name="quote" class="form-control" id="quote"></textarea>
@@ -33,36 +32,49 @@
        <div class="col-md-5">
            <div class="panel panel-info">
                <div class="panel-body ">
+                   @foreach($quotes as $quote)
                    <div class="well clearfix">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias asperiores dolore dolorem, dolorum, eius eveniet fuga harum laborum minima minus necessitatibus neque nesciunt nobis perspiciatis quia ratione similique sint vel.
-                   <a href="#">Created at</a>
+                       {{$quote->quote}}
+                           <a href="#">{{date('F j, Y H:i',strtotime($quote->created_at))}}</a>
+                           {{--This is basically for the number of likes--}}
                        <div class="pull-right"> <button type="submit" class="btn btn-primary"><i class="fa fa-thumbs-o-up fa-2x"></i> </button>
-                           <button type="submit" class="btn btn-danger"><i class="fa fa-trash fa-2x"></i></button>
+                           <a href="" class="btn btn-success" id="edit"><i class="fa fa-edit fa-2x"></i></a>
+                           <a href="{{route('quote_delete',['quote_id'=> $quote->id])}}" class="btn btn-danger"><i class="fa fa-trash fa-2x"></i></a>
                        </div>
                    </div>
-
-                   <div class="well clearfix">
-                       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias asperiores dolore dolorem, dolorum, eius eveniet fuga harum laborum minima minus necessitatibus neque nesciunt nobis perspiciatis quia ratione similique sint vel.
-                       <a href="#">Created at</a>
-                       <div class="pull-right"> <button type="submit" class="btn btn-primary"><i class="fa fa-thumbs-o-up fa-2x"></i> </button>
-                           <button type="submit" class="btn btn-danger"><i class="fa fa-trash fa-2x"></i></button>
-                       </div>
-                   </div>
-
-                   <div class="well clearfix">
-                       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias asperiores dolore dolorem, dolorum, eius eveniet fuga harum laborum minima minus necessitatibus neque nesciunt nobis perspiciatis quia ratione similique sint vel.
-                       <a href="#">Created at</a>
-                       <div class="pull-right"> <button type="submit" class="btn btn-primary"><i class="fa fa-thumbs-o-up fa-2x"></i> </button>
-                           <button type="submit" class="btn btn-danger"><i class="fa fa-trash fa-2x"></i></button>
-                       </div>
-                   </div>
-
-
+                   @endforeach
                </div>
            </div>
        </div>
 
    </div>
+
+   <div class="modal fade" id="edit-modal">
+       <div class="modal-dialog">
+           <div class="modal-content">
+               <div class="modal-header">
+                   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title">Edit Quote</h4>
+               </div>
+               <div class="modal-body">
+                   <form method="post" action="">
+                       <div class="form-group">
+                           <label for="edit_quote">Write a Quote</label>
+                           <textarea class="form-control"  name="edit_quote" id="edit_quote"></textarea>
+                       </div>
+                       <div class="form-group">
+                           <label for="edit_quote">Author</label>
+                           <input type="text" class="form-control"  name="edit_author" id="edit_author"></textarea>
+                       </div>
+                   </form>
+                  </div>
+               <div class="modal-footer">
+                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                   <button type="button" class="btn btn-primary" id="modal-save">Save changes</button>
+               </div>
+           </div><!-- /.modal-content -->
+       </div><!-- /.modal-dialog -->
+   </div><!
 @endsection
 @section('scripts')
     <script type="text/javascript" src="{{URL::to('src/js/miscellanous.js')}}"></script>

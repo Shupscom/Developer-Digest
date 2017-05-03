@@ -7,7 +7,7 @@
       <link rel="stylesheet" type="text/css" href="{{URL::to('src/css/bootstrap.css')}}">
       <link rel="stylesheet" type="text/css" href="{{URL::to('src/css/style.css')}}">
       <link rel="stylesheet" href="{{URL::to('src/css/font-awesome.css')}}">
-      <link rel="stylesheet" type="text/css" href="{{URL::to('src/css/main.css')}}">
+      {{--<link rel="stylesheet" type="text/css" href="{{URL::to('src/css/main.css')}}">--}}
       <link rel="stylesheet" type="text/css" href="{{URL::to('src/css/owl.carousel.css')}}">
       <link rel="stylesheet" type="text/css" href="{{URL::to('src/css/owl.theme.css')}}">
       <link rel="stylesheet" type="text/css" href="{{URL::to('src/css/owl.transitions.css')}}">

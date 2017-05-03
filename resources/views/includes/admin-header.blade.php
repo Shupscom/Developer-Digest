@@ -32,6 +32,8 @@
                             <li><a href="{{route('quote')}}">Quote of the Day</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="{{route('developer')}}">Developer of the Week</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="{{route('books')}}">Book of the Month</a></li>
                         </ul>
                     </li>
                     @if(Auth::user())

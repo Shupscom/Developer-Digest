@@ -13,8 +13,8 @@
         {{--</script></div>--}}
     {{--</div>--}}
     {{--This is the caurosel place--}}
-    {{--<div class="col-lg-12">--}}
-    {{--<div id="owl-example" class="owl-carousel">--}}
+    <div class="col-lg-12">
+    <div id="owl-example" class="owl-carousel">
     {{--<div>  <img src="{{URL::to('src/images/DD.png')}}" height="250"/> </div>--}}
     {{--<div> <img src="{{URL::to('src/images/DD.png')}}" height="250"/>  </div>--}}
     {{--<div> <img src="{{URL::to('src/images/DD.png')}}" height="250"/>  </div>--}}
@@ -22,8 +22,8 @@
     {{--<div> <img src="{{URL::to('src/images/DD.png')}}" height="250"/>  </div>--}}
     {{--<div> <img src="{{URL::to('src/images/DD.png')}}" height="250"/>  </div>--}}
     {{--<div> <img src="{{URL::to('src/images/DD.png')}}" height="250"/> </div>--}}
-    {{--</div>--}}
-        {{--</div>--}}
+    </div>
+        </div>
     <div class="social-media pull-right clearfix">
         <a class="btn btn-primary social-facebook" href="#"><i class="fa fa-facebook fa-2x"></i></a>
         <a class="btn btn-primary social-twitter" href="#"><i class="fa fa-twitter fa-2x"></i></a>
@@ -79,12 +79,19 @@
                             {{--<label>2 Days Ago</label>--}}
                             {{--<span></span>--}}
                         </div>
+                    {{--<h5  class="head">Join the Discussion</h5>--}}
+                    {{--<div class="editor text-center">--}}
+                        {{--<h3>DeltaMaker – The new kid on the block An Elegant 3D Printer</h3>--}}
+                        {{--<p>A new cheap ass 3D Printer worth checking out</p>--}}
+                        {{--<label>2 Days Ago</label>--}}
+                        {{--<span></span>--}}
+                    {{--</div>--}}
                 </div>
                 <div class="editors-pic-grids">
                     <h5>Developer of the Week</h5>
                     <div class="editors-pic">
                         <div class="e-pic">
-                            <a href="{{route('single')}}"><img src="{{URL::to('src/images/ep1.jpg')}}" alt="" /></a>
+                            <a href="{{route('single')}}"><img src="{{URL::to('src/images/ep1.jpg')}}" class="img-circle" width="50%"/></a>
                         </div>
                         <div class="e-pic-info text-center">
                             <h3><span style="color:#1ac7c3">Name:</span> Olasupo Kazeem Abolaji</h3>
