@@ -66,8 +66,6 @@
         </div>
     </div>
 
-
-
     <div class="modal fade" id="edit-modal">
         <div class="modal-dialog">
             <div class="modal-content">
