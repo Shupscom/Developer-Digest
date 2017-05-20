@@ -37,6 +37,11 @@
         <div class="content">
             <div class="col-md-7 content-left">
                 <div class="article">
+                    <h5 class="head">Discussions</h5>
+                    <h6>Name|email </h6>
+                    <a class="title" href="{{route('single')}}">DeltaMaker – The new kid on the block An Elegant 3D Printer and a new wicked ass thing</a>
+                </div>
+                <div class="article">
                     <h5 class="head">in recent posts</h5>
                     <h6>Software </h6>
                     <a class="title" href="{{route('single')}}">DeltaMaker – The new kid on the block An Elegant 3D Printer and a new wicked ass thing</a>
@@ -91,7 +96,7 @@
                     <h5>Developer of the Week</h5>
                     <div class="editors-pic">
                         <div class="e-pic">
-                            <a href="{{route('single')}}"><img src="{{URL::to('src/images/ep1.jpg')}}" class="img-circle" width="50%"/></a>
+                            <a href="{{route('single')}}"><img src="{{URL::to('src/images/ep1.jpg')}}" class="img-circle"/></a>
                         </div>
                         <div class="e-pic-info text-center">
                             <h3><span style="color:#1ac7c3">Name:</span> Olasupo Kazeem Abolaji</h3>

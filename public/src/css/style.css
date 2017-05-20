@@ -130,7 +130,7 @@ label{
 	font-size: 1.8em;
 	text-decoration:none;
 	padding: 0;
-	margin: 0 1em;
+	margin: 0 0.8em;
 	list-style: none;
 	cursor: pointer;
 	font-weight: 400;
@@ -279,7 +279,7 @@ a.title {
 .content-right {
 	padding:0;
 	/*border-left:1px solid #e6e6e6;*/
-	border-right:1px solid #e6e6e6;
+	/*border-right:1px solid #e6e6e6;*/
 	/*border-top:1px solid #e6e6e6;*/
 }
 .editor { 
@@ -325,9 +325,9 @@ a.title {
 	text-decoration: none;
 }
 .e-pic {
-	width:90%;
+	width:50%;
 	float:left;
-	margin-left: 5%;
+	margin-left: 25%;
 	margin-right: 5%;
 }
 .e-pic img {
@@ -638,6 +638,7 @@ h3.c-head {
 }
 .printing-content {
 	padding: 2em 1.5em;
+	border-right: 1px solid #e6e6e6;
 }
 .print-main h3 {
 	color: #1ac7c3;

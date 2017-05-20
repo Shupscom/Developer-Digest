@@ -1,14 +1,16 @@
 @extends('layouts.admin-master')
 @section('title')
-    Scholars Platform
+    Gadgets
 @endsection
 @section('styles')
     <link rel="stylesheet" href="{{URL::to('src/css/font-awesome.css')}}">
 @endsection
 @section('content')
+    <a class="btn btn-primary link" href="{{route('create_gadgets')}}" role="button"><i class="fa fa-plus"></i> New Post </a>
+    <a class="btn btn-success link" href="{{route('admin.dashboard')}}" role="button"><i class="fa fa-user"></i>View Admin</a>
     <div class="table-responsive">
         <table class="table table-hover">
-            <caption class="text-center"><h3>Scholars Forum</h3></caption>
+            <caption class="text-center"><h3>Gadgets</h3></caption>
             <thead>
             <tr>
                 <td>ID</td>

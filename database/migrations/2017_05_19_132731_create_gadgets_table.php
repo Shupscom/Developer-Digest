@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateContactMessagesTable extends Migration
+class CreateGadgetsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,14 +12,9 @@ class CreateContactMessagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('contact_messages', function (Blueprint $table) {
+        Schema::create('gadgets', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->string('name');
-            $table->string('email');
-            $table->text('message');
-
-
         });
     }
 
@@ -30,6 +25,6 @@ class CreateContactMessagesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('contact_messages');
+        Schema::drop('gadgets');
     }
 }

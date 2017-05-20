@@ -54,6 +54,10 @@ Route::group(['middleware'=>['web']],function(){
         return view('frontend.other.gadgets',['categories'=> $category]);
     })->name('gadgets');
 
+    Route::get('/News',function(){
+        return view('frontend.other.news');
+    })->name('news');
+
 
     // Login for Administartors Side
     Route::post('/admin/login',[
@@ -129,13 +133,21 @@ Route::group(['middleware'=>['web']],function(){
             'as' => 'delete_category'
         ]);
 
-        Route::get('/Scholars', function () {
-            return view('admin.other.scholars');
-        })->name('scholars');
+        Route::get('/Gadgets', function () {
+            return view('admin.other.gadgets');
+        })->name('admin.gadgets');
+
+        Route::get('/CreateGadgets', function () {
+            return view('admin.gadgets.create_gadgets');
+        })->name('create_gadgets');
+
+        Route::get('/EditGadgets', function () {
+            return view('admin.gadgets.edit_gadgets');
+        })->name('edit_gadgets');
 
         Route::get('/News', [
             'uses' => 'NewsController@getNewsIndex',
-            'as' => 'news'
+            'as' => 'admin.news'
         ]);
 
         Route::get('/DailyQuote',[
@@ -178,7 +190,8 @@ Route::group(['middleware'=>['web']],function(){
             'as' => 'book_delete'
         ]);
         Route::get('/Contact', function () {
-            return view('admin.other.contact');
+            $contacts = \App\ContactMessage::all();
+            return view('admin.other.contact',['contacts'=> $contacts]);
         })->name('contact');
 
         Route::get('/CreateNews',[

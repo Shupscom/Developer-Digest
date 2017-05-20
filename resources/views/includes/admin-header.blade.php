@@ -23,9 +23,9 @@
                     <li><a href="{{route('admin.dashboard')}}">Dashboard</a></li>
                     <li><a href="{{route('admin.posts')}}">Posts</a></li>
                     <li><a href="{{route('categories')}}">Categories</a></li>
-                    <li><a href="{{route('scholars')}}">Scholars</a></li>
+                    <li><a href="{{route('admin.gadgets')}}">Gadgets</a></li>
                     <li><a href="{{route('contact')}}">ContactMessages</a></li>
-                    <li><a href="{{route('news')}}">News</a></li>
+                    <li><a href="{{route('admin.news')}}">News</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Miscellanous<span class="caret"></span></a>
                         <ul class="dropdown-menu">

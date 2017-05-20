@@ -7,8 +7,9 @@
         <div class="pages">
             <ul>
                 <li><a href="{{route('scholarsplatform')}}" {{Request::is('Scholars') ? 'class=active':''}}>Scholars</a></li>
-                <li><a href="{{route('gadgets')}}">Gadgets</a></li>
-                <li><a href="{{route('tutorials')}}">Tutorials</a></li>
+                <li><a href="{{route('gadgets')}}" {{Request::is('Gadgets') ? 'class=active':''}}>Gadgets</a></li>
+                <li><a href="{{route('tutorials')}}" {{Request::is('Tutorials') ? 'class=active':''}}>Tutorials</a></li>
+                <li><a href="{{route('news')}}"{{Request::is('News') ? 'class=active':''}}>News</a></li>
             </ul>
         </div>
         <div class="navigation">
@@ -30,9 +31,9 @@
         <span class="menu"></span>
         <div class="list-nav">
             <ul>
-                {{--@foreach($categories as $category)--}}
-                    {{--<li><a href="">{{$category->name}}</a></li>--}}
-                    {{--@endforeach--}}
+                @foreach($categories as $category)
+                    <li><a href="">{{$category->name}}</a></li>
+                    @endforeach
                 {{--<li><a href="3dprinting.html">3D Printing</a></li>|--}}
                 {{--<li><a href="materials.html">Materials</a></li>|--}}
                 {{--<li><a href="printing.html">Printing</a></li>|--}}

@@ -11,7 +11,7 @@
             <div class="singel_right">
                <div class="lcontact span_1_of_contact">
                   <div class="contact-form">
-                     <form method="post" action="#">
+                     <form method="post" action="">
                         <p class="comment-form-author"><label for="author">Your Name:</label>
                            <input type="text" class="textbox" value="Enter your name here..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter your name here...';}">
                         </p>

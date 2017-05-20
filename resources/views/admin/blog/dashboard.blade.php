@@ -18,6 +18,7 @@
     {{--@if(Auth::user()->role_id == 1)--}}
     <a class="btn btn-primary link" href="{{route('create_admin')}}" role="button"><i class="fa fa-plus"></i>New Admin </a>
     {{--@endif--}}
+            <a class="btn btn-success link" href="{{route('create_gadgets')}}" role="button"><i class="fa fa-plus"></i>New Gadgets </a>
             {{--<div id="owl-example" class="owl-carousel">--}}
                 {{--<div>  <img src="{{URL::to('src/images/DD.png')}}" height="250"/> </div>--}}
                 {{--<div> <img src="{{URL::to('src/images/DD.png')}}" height="250"/>  </div>--}}
