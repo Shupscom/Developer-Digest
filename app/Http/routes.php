@@ -10,6 +10,7 @@ Route::group(['middleware'=>['web']],function(){
        'uses' => 'PostController@getfrontendIndex',
         'as' => 'index'
     ]);
+
     Route::get('/About',function(){
         $category = \App\Category::all();
         return view('frontend.other.about',['categories' => $category]);
@@ -19,6 +20,11 @@ Route::group(['middleware'=>['web']],function(){
            'uses' =>'ContactController@getIndex',
             'as' => 'contact_me'
         ]);
+
+    Route::post('/Contact',[
+        'uses' => 'ContactController@postContact',
+        'as' => 'post_contact'
+    ]);
 
     Route::get('/Subscribe',function(){
        return view('frontend.other.subscribe');

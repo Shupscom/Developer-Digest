@@ -26,20 +26,21 @@
 <div class="container">
     <div class="header-bottom">
         <div class="type">
-            <h5>Article Types</h5>
+            {{--<h5>Article Types</h5>--}}
+            <h5>Categories</h5>
         </div>
         <span class="menu"></span>
         <div class="list-nav">
             <ul>
-                @foreach($categories as $category)
-                    <li><a href="">{{$category->name}}</a></li>
-                    @endforeach
-                {{--<li><a href="3dprinting.html">3D Printing</a></li>|--}}
-                {{--<li><a href="materials.html">Materials</a></li>|--}}
-                {{--<li><a href="printing.html">Printing</a></li>|--}}
-                {{--<li><a href="filestoprint.html">Files to Print</a></li>|--}}
-                {{--<li><a href="404.html">Videos</a></li>|--}}
-                {{--<li><a href="{{route('about')}}">About</a></li>--}}
+                {{--@foreach($categories as $category)--}}
+                    {{--<li><a href="">{{$category->name}}</a></li>--}}
+                    {{--@endforeach--}}
+                <li><a href="">Web Development</a></li>|
+                <li><a href="">Software Development</a></li>|
+                <li><a href="">UI/UX Design</a></li>|
+                <li><a href="">Electronics</a></li>|
+                <li><a href="">Digital Marketing</a></li>|
+                {{--<li><a href="">One More</a></li>--}}
             </ul>
         </div>
 
