@@ -9,6 +9,7 @@
 @if(Session::has('success'))
     <div class="row">
         <div class="col-md-4 col-md-offset-4 alert alert-success">
+            <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
             <p class="text-center text-uppercase"><strong>{{Session::get('success')}}</strong></p>
         </div>
     </div>

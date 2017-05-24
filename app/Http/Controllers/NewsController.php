@@ -17,7 +17,7 @@ class NewsController extends Controller{
     public function postCreateNews(Request $request){
         $rules = ['file' => 'required|max:' . config('app.maxFileSize') . '|mimes:' . config('app.allowedFiles')];
         $this->validate($request,[
-            'title' => 'required|max:30',
+            'title' => 'required|max:60',
             'author' => 'required',
             'body' =>'required'
         ],$rules);
@@ -26,12 +26,13 @@ class NewsController extends Controller{
         $news->title = $request['title'];
         $news->author = $request['author'];
         $news->body = $request['body'];
+        $news->slug = str_slug($news->title);
         if($file = $request->file('file')){
             $news->picture = time().$file->getClientOriginalName();
             $file->move('img/uploads/admin',$news->picture);
         }
         $news->save();
-         return redirect()->route('news');
+         return redirect()->route('admin.news');
 
     }
     public function postEditNews(Request $request){
@@ -45,6 +46,7 @@ class NewsController extends Controller{
         $news->title = $request['title'];
         $news->author = $request['author'];
         $news->body = $request['body'];
+        $news->slug = str_slug($news->title);
         if($file = $request->hasFile('file')){
             $file = $request->file('file');
             $news->picture = time().$file->getClientOriginalName();
@@ -59,5 +61,33 @@ class NewsController extends Controller{
        $news = News::find($delete_id);
         $news->delete();
         return redirect()->back();
+    }
+
+    /* Frontend Methods*/
+
+      public function getIndex(){
+          $news = News::OrderBy('created_at','desc')->get();
+          $first_news = News::OrderBy('created_at','desc')->first();
+          foreach($news as $new){
+              $new->body = $this->shortenText($new->body,15);
+          }
+          return view('frontend.other.news',['news'=> $news,'first_news'=> $first_news]);
+       }
+
+      public function getSingle($news_slug){
+          $new = News::where('slug',$news_slug)->first();
+//          $new = News::find($news_slug);
+          return view('frontend.other.news_single',['new'=>$new]);
+      }
+
+
+    /* Shorten Text */
+    private function shortenText($text,$words_count){
+        if(str_word_count($text,0) > $words_count){
+            $words =  str_word_count($text,2);
+            $pos = array_keys($words);
+            $text = substr($text,0,$pos[$words_count]).'...';
+        }
+        return $text;
     }
 }

@@ -17,38 +17,26 @@
                <div class="col-md-7 printing-content">
                     <div class="print-main">
                          <h3>News</h3>
-                         <a href="single.html">Nokia offering customers printable STL phone cases for the Lumia 820</a>
-                         <p class="sub_head">Posted by <a href="#">Admin</a> on june 14,2015</p>
-                         <a href="single.html"><img src="{{URL::to('src/images/p1.jpg')}}" class="img-responsive" alt="" /></a>
-                         <p class="ptext">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose injected humour and the like</p>
+                         <a href="{{route('news.single',['news_slug'=>$first_news->slug])}}">{{$first_news->title}}</a>
+                         <p class="sub_head">Posted by <a href="#">{{$first_news->author}}</a> {{date('F j, Y H:i',strtotime($first_news->created_at))}}</p>
+                         <a href="{{route('news.single',['news_slug'=>$first_news->slug])}}"><img src="{{URL::to('img/uploads/admin/'.$first_news->picture)}}" class="img-responsive" alt="" /></a>
+                         <p class="ptext">{{$first_news->body}}</p>
                     </div>
                     <div class="print-grids">
-
+                         @foreach($news as $new)
                          <div class="print-grid">
                               <div class="print-img">
-                                   <a href="single.html"><img src="{{URL::to('src/images/p4.jpg')}}" class="img-responsive" alt="" /></a>
+                                   <a href="{{route('news.single',['news_slug'=>$new->slug])}}"><img src="{{URL::to('img/uploads/admin/'.$new->picture)}}" class="img-responsive" alt="" /></a>
                               </div>
                               <div class="print-text">
-                                   <a class="bhead" href="single.html">3D Printed Belts by Francis Bitonti Studio – Very cool</a>
-                                   <p><a href="#">3D Printing, <a href="#">3D Software,</a><a href="#"> Files to Print </a> |   may 19, 2014</p>
-                                   <p>This week Nokia announced it is giving away files for printable case for it’s new Lumia 820 range. This is</p>
-                                   <a class="more" href="single.html">...Read More</a>
+                                   <a class="bhead" href="{{route('news.single',['news_slug'=>$new->slug])}}">{{$new->title}}</a>
+                                   <p><a href="{{route('news.single',['news_slug'=>$new->slug])}}"> {{$new->author}} </a> | {{date('F j, Y H:i',strtotime($new->created_at))}}</p>
+                                   <p>{{$new->body}}</p>
+                                   <a class="more" href="{{route('news.single',['news_slug'=>$new->slug])}}">...Read More</a>
                               </div>
                               <div class="clearfix"></div>
                          </div>
-                         <div class="print-grid">
-                              <div class="print-img">
-                                   <a href="single.html"><img src="{{URL::to('src/images/p5.jpg')}}" class="img-responsive" alt="" /></a>
-                              </div>
-                              <div class="print-text">
-                                   <a class="bhead" href="single.html">3D Things to Print #2 – Camera Lens Hood</a>
-                                   <p><a href="#">3D Printing, <a href="#">3D Software,</a><a href="#"> Files to Print </a> |   may 19, 2014</p>
-                                   <p>This week Nokia announced it is giving away files for printable case for it’s new Lumia 820 range. This is</p>
-                                   <a class="more" href="single.html">...Read More</a>
-                              </div>
-                              <div class="clearfix"></div>
-                         </div>
-
+                         @endforeach
                     </div>
                </div>
                <div class="col-md-5 content-right">

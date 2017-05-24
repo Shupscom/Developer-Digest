@@ -31,38 +31,47 @@ Route::group(['middleware'=>['web']],function(){
     });
 
     Route::get('/Single',function(){
-        $category = \App\Category::all();
-        return view('frontend.blog.single',['categories' => $category]);
+        return view('frontend.blog.single');
     })->name('single');
 
     Route::get('/Scholars',function(){
-        $category = \App\Category::all();
-        return view('frontend.other.scholars',['categories'=> $category]);
+        return view('frontend.other.scholars');
     })->name('scholarsplatform');
 
     Route::get('/Tutorials',function(){
-        $category = \App\Category::all();
-       return view('frontend.other.tutorials',['categories'=> $category]);
+       return view('frontend.other.tutorials');
     })->name('tutorials');
 
     Route::get('/DigitalMarketing',function(){
-        $category = \App\Category::all();
-        return view('frontend.blog.digital',['categories'=> $category]);
+
+        return view('frontend.blog.digital');
     })->name('digital');
 
-    Route::get('/Discussion',function(){
-        $category = \App\Category::all();
-        return view('frontend.other.discussion',['categories'=> $category]);
-    })->name('discussion');
+    Route::get('/Discussion',[
+        'uses' => 'DiscussionController@getIndex',
+        'as' => 'discussion'
+    ]);
+
+    Route::post('/Discussion',[
+       'uses' => 'DiscussionController@postDiscuss',
+        'as' => 'post_discuss'
+    ]);
+
 
     Route::get('/Gadgets',function(){
-        $category = \App\Category::all();
-        return view('frontend.other.gadgets',['categories'=> $category]);
+        return view('frontend.other.gadgets');
     })->name('gadgets');
 
-    Route::get('/News',function(){
-        return view('frontend.other.news');
-    })->name('news');
+    Route::get('/News',[
+        'uses' => 'NewsController@getIndex',
+        'as' => 'news'
+    ]);
+
+    Route::get('News/{news_slug}/',[
+       'uses' => 'NewsController@getSingle',
+        'as' => 'news.single'
+    ]);
+
 
 
     // Login for Administartors Side
@@ -154,6 +163,11 @@ Route::group(['middleware'=>['web']],function(){
         Route::get('/News', [
             'uses' => 'NewsController@getNewsIndex',
             'as' => 'admin.news'
+        ]);
+
+        Route::get('/Discuss',[
+           'uses' => 'DiscussionController@getDiscuss',
+            'as' => 'admin.discuss'
         ]);
 
         Route::get('/DailyQuote',[

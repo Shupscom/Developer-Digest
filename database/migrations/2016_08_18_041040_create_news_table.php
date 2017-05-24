@@ -19,6 +19,7 @@ class CreateNewsTable extends Migration
             $table->string('author');
             $table->string('picture');
             $table->text('body');
+            $table->string('slug');
             $table->rememberToken();
         });
     }

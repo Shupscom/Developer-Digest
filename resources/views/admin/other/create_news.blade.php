@@ -10,6 +10,7 @@
         <div class="col-md-6 col-md-offset-3">
             <h3>Create a News</h3>
             <form action="{{route('create_news')}}" method="post" enctype="multipart/form-data">
+                @include('includes.message-block')
                 <div class="form-group">
                     <label for="title">Title</label>
                     <input class="form-control" type="text" name="title" id="title" placeholder="Title" value="{{Request::old('title')}}"/>
@@ -32,11 +33,11 @@
             </form>
         </div>
     </div>
+@endsection
+@section('scripts')
     <script>
-        window.onload(function(){
+        window.onload = function(){
             CKEDITOR.replace('body');
-        });
+        }
     </script>
-
-
 @endsection

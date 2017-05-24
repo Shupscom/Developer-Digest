@@ -11,15 +11,17 @@
                 <div class="singel_right">
                     <div class="lcontact span_1_of_contact">
                         <div class="contact-form">
-                            <form method="post" action="#" enctype="multipart/form-data">
+                            @include('includes.message-block')
+                            <form method="post" action="{{route('post_discuss')}}" enctype="multipart/form-data">
+                               {{csrf_field()}}
                                 <p class="comment-form-author"><label for="author">Your Name:</label>
-                                    <input type="text" class="textbox" value="Enter your name here..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter your name here...';}">
+                                    <input name="name" type="text" class="textbox" value="Enter your name here..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter your name here...';}">
                                 </p>
                                 <p class="comment-form-author"><label for="author">Email:</label>
-                                    <input type="text" class="textbox" value="Enter your email here..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}">
+                                    <input name="email" type="text" class="textbox" value="Enter your email here..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}">
                                 </p>
                                 <p class="comment-form-author"><label for="author">Message:</label>
-                                    <textarea value="Enter your message here..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message';}">Enter your message here...</textarea>
+                                    <textarea name="message" value="Enter your message here..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message';}">Enter your message here...</textarea>
                                 </p>
                                 <input name="submit" type="submit" id="submit" value="Submit">
                             </form>
